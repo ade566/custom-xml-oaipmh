@@ -10,7 +10,8 @@ class XML extends CI_Controller
 		$offset = $this->input->get('offset') ?? 0;
 		$limit = $this->input->get('limit') ?? 0;
 
-    $query = $this->db->get('client', $limit, $offset)->result_array();
+		$this->db->order_by('id', 'desc');
+    		$query = $this->db->get('client', $limit, $offset)->result_array();
 
 		$xml = '<OAI-PMH xmlns="https://www.openarchives.org/OAI/2.0/" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.openarchives.org/OAI/2.0/ https://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
 		<ListRecords>';
