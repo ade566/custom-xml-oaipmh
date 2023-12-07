@@ -18,10 +18,10 @@ class XML extends CI_Controller
 			$xml .= '<record>
 				<metadata>
 					<oai_dc:dc xmlns:oai_dc="https://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="https://purl.org/dc/elements/1.1/" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.openarchives.org/OAI/2.0/oai_dc/ https://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-						<dc:name>'.$row['name'].'</dc:name>
-						<dc:email>'.$row['email'].'</dc:email>
-						<dc:address>'.$row['address'].'</dc:address>
-						<dc:status>'.$row['status'].'</dc:status>
+						<dc:name>'.html_escape($row['name']).'</dc:name>
+						<dc:email>'.html_escape($row['email']).'</dc:email>
+						<dc:address>'.html_escape($row['address']).'</dc:address>
+						<dc:status>'.html_escape($row['status']).'</dc:status>
 					</oai_dc:dc>
 				</metadata>
 			</record>';
